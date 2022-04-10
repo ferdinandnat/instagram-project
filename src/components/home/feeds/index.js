@@ -15,6 +15,7 @@ function Feeds() {
     }, [])
 
     const renderPhotos = () => {
+        // tugas selanjutnya: munculin sbgai card yang ada caption dan icon like
         return photos.map(photo => <img src= {photo.url}/>)
     }
 
