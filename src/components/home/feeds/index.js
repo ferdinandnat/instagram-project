@@ -3,13 +3,14 @@ import { useEffect, useState} from 'react'
 
 function Feeds() {
     const [photos, setPhotos] = useState([])
-  useEffect(() => {
+    
+    useEffect(() => {
       async function getPhotos() {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
-
+        const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
       }
+      
       getPhotos()
-  }, [])
+    }, [])
   return (
     <div>
       <h1>Feeds</h1>
