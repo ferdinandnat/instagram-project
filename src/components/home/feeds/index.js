@@ -1,12 +1,11 @@
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 
 function Feeds() {
-
-(<div>
-    Feeds
-</div>)
-return
-
+  return (
+    <div>
+      <h1>Feeds</h1>
+    </div>
+  )
 }
 
 export default Feeds
