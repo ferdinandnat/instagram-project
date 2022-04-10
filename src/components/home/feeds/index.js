@@ -7,7 +7,9 @@ function Feeds() {
     useEffect(() => {
       async function getPhotos() {
         const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
-      }
+        setPhotos(response.data)
+        console.log([photos])
+    }
       
       getPhotos()
     }, [])
