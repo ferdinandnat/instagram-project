@@ -15,7 +15,7 @@ function Feeds() {
     }, [])
 
     const renderPhotos = () => {
-        return photos.map(photo => photo.url)
+        return photos.map(photo => <img src= {photo.url}/>)
     }
 
   return (
