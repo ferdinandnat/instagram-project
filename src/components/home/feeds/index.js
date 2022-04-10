@@ -8,14 +8,20 @@ function Feeds() {
       async function getPhotos() {
         const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
         setPhotos(response.data)
-        console.log([photos])
+        console.log(response.data)
     }
       
       getPhotos()
     }, [])
+
+    const renderPhotos = () => {
+        return photos.map(photo => photo.url)
+    }
+
   return (
     <div>
       <h1>Feeds</h1>
+    { renderPhotos() }
     </div>
   )
 }
