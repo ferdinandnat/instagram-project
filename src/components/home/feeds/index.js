@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState} from 'react'
+import Card from '../card'
+
 
 function Feeds() {
     const [photos, setPhotos] = useState([])
@@ -16,7 +18,7 @@ function Feeds() {
 
     const renderPhotos = () => {
         // tugas selanjutnya: munculin sbgai card yang ada caption dan icon like
-        return photos.map(photo => <img src= {photo.url}/>)
+        return photos.map(photo => <Card image={photo.url}/>)
     }
 
   return (
