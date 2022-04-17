@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState} from 'react'
 import Card from '../card'
+import {getFeeds} from '../../../data/firebase'
 
 
 function Feeds() {
@@ -8,9 +9,9 @@ function Feeds() {
     
     useEffect(() => {
       async function getPhotos() {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/photos")
-        setPhotos(response.data)
-        console.log(response.data)
+        const response = await getFeeds() 
+        setPhotos(response)
+        console.log(response)
     }
       
       getPhotos()
@@ -20,8 +21,9 @@ function Feeds() {
         // tugas selanjutnya: munculin sbgai card yang ada caption dan icon like
         return photos.map(photo => {
           return <Card 
-            image={photo.url} 
-            caption={photo.title} />
+            image={photo.image} 
+            caption={photo.caption}
+            likeCount= '100'  />
         })
     }
 
