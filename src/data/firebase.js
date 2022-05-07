@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection } from "firebase/firestore";
+import { getFirestore, getDocs, addDoc, collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDPaQf4ktYzVQotbvo3DrkcZgng573OLhk",
@@ -20,3 +20,13 @@ export const getFeeds = async () => {
     querySnapshot.forEach(feed => feeds.push(feed.data()))
     return feeds
 }
+
+export const createFeed = async (image,caption) => {
+  const feed = {
+    image: image,
+    caption: caption,
+    likeCount: 0
+}
+  await addDoc(collection(firestore, 'feed'), feed)
+}
+

@@ -23,7 +23,7 @@ function Feeds() {
           return <Card 
             image={photo.image} 
             caption={photo.caption}
-            likeCount= '100'  />
+            likeCount= {photo.likeCount}  />
         })
     }
 
