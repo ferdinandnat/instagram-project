@@ -21,8 +21,9 @@ export const getFeeds = async () => {
     return feeds
 }
 
-export const createFeed = async (image,caption) => {
+export const createFeed = async (username,image,caption) => {
   const feed = {
+    username: username,
     image: image,
     caption: caption,
     likeCount: 0

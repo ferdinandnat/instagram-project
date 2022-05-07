@@ -3,15 +3,21 @@ import { useNavigate } from 'react-router-dom'
 import { createFeed } from '../../data/firebase'
 
 function Post() {
+    const [username,setUsername] = useState('')
     const [photo,setPhoto] = useState('')
     const [caption,setCaption] = useState('')
     const navigate = useNavigate()
 
     const submit= async() => {
-        await createFeed(photo,caption)
+        await createFeed(username,photo,caption)
         navigate('/')
         console.log('tes')
-    } 
+    }
+
+    const saveUsername = (event) => {
+        setUsername(event.target.value)
+        console.log(username)
+    }
 
     const savePhoto = (event) => {
         setPhoto(event.target.value)
@@ -25,6 +31,11 @@ function Post() {
 
     return (
     <div>
+
+        <div className="form">
+            <h1>Username</h1>
+            <input type='text' placeholder="insert username" onChange={saveUsername}/>
+        </div>
         <div className="form">
             <h1>Upload photos</h1>
             <input type='text' placeholder="insert url" onChange={savePhoto}/>

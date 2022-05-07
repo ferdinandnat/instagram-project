@@ -20,7 +20,8 @@ function Feeds() {
     const renderPhotos = () => {
         // tugas selanjutnya: munculin sbgai card yang ada caption dan icon like
         return photos.map(photo => {
-          return <Card 
+          return <Card
+            username={photo.username}
             image={photo.image} 
             caption={photo.caption}
             likeCount= {photo.likeCount}  />
