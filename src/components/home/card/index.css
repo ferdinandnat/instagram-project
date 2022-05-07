@@ -9,3 +9,7 @@
 .card__like {
     text-align: left;
 }
+
+.card__image {
+    max-width: 600px;
+}
