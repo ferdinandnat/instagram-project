@@ -15,6 +15,8 @@ function Feed() {
          const data = await getfeedDetail(id)
          console.log(data)
         }
+
+        // panggil disini ?
     }, [])
     return (
         <div className='card'>
