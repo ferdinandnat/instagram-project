@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, addDoc, collection } from "firebase/firestore";
+import { getFirestore, getDocs, addDoc, doc, getDoc, collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDPaQf4ktYzVQotbvo3DrkcZgng573OLhk",
@@ -39,3 +39,8 @@ export const createFeed = async (username,image,caption) => {
   await addDoc(collection(firestore, 'feed'), feed)
 }
 
+export const getfeedDetail = async (id) => {
+  const docRef = doc(firestore, 'feed', id)
+  const docSnap = await getDoc (docRef)
+  return docSnap.data()
+}

@@ -13,7 +13,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/profile' element={<Profile/>}/>
       <Route path='/post-create' element={<Post/>}/>
-      <Route path='/feed-detail' element={<Feed/>}/>
+      <Route path='/feed-detail/:id' element={<Feed/>}/>
     </Routes>
     </div>
   );

@@ -1,9 +1,17 @@
+import {useParams} from 'react-router-dom'
+import { getfeedDetail } from '../../data/firebase'
+import {useEffect} from 'react'
 function Feed() {
     const image = ''
     const likeCount = ''
     const username = ''
     const caption = ''
+    const params = useParams()
+    const id = params.id
 
+    useEffect(() => {
+        getfeedDetail()
+    }, [])
     return (
         <div className='card'>
             <img className='card__image' src={image}/>

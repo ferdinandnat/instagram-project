@@ -6,10 +6,11 @@ function Card(props) {
     const image = props.image
     const caption = props.caption
     const likeCount = props.likeCount
+    const feedID = props.id
     const navigate = useNavigate()
 
 function goToFeed() {
-        navigate('/feed-detail')
+        navigate(`/feed-detail/${feedID}`)
    }
 
     return (

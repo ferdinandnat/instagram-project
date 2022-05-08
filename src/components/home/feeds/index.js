@@ -24,7 +24,8 @@ function Feeds() {
             username={photo.username}
             image={photo.image}    
             caption={photo.caption}
-            likeCount= {photo.likeCount}  />
+            likeCount= {photo.likeCount}
+            id= {photo.id}/>
         })
     }
 
