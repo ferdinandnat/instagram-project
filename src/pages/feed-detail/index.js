@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom'
 import { getfeedDetail } from '../../data/firebase'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 function Feed() {
     const image = ''
     const likeCount = ''
@@ -8,15 +8,16 @@ function Feed() {
     const caption = ''
     const params = useParams()
     const id = params.id
+    const [feed,setFeed] = useState({})  
 
     useEffect(() => {
         const loadFeedDetail = async () => {
             // call firebase get feed detail with ID
          const data = await getfeedDetail(id)
+         setFeed(data)
          console.log(data)
         }
-
-        // panggil disini ?
+        loadFeedDetail()
     }, [])
     return (
         <div className='card'>
