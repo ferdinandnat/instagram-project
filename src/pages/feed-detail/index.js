@@ -10,7 +10,9 @@ function Feed() {
     const id = params.id
 
     useEffect(() => {
-        getfeedDetail()
+        const loadFeedDetail = async () => {
+            // call firebase get feed detail with ID
+        }
     }, [])
     return (
         <div className='card'>
