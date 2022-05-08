@@ -22,7 +22,7 @@ function Feeds() {
         return photos.map(photo => {
           return <Card
             username={photo.username}
-            image={photo.image}   
+            image={photo.image}    
             caption={photo.caption}
             likeCount= {photo.likeCount}  />
         })

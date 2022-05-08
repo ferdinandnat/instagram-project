@@ -17,7 +17,15 @@ const firestore = getFirestore();
 export const getFeeds = async () => {
     const querySnapshot = await getDocs(collection(firestore, "feed"));
     const feeds = []
-    querySnapshot.forEach(feed => feeds.push(feed.data()))
+    querySnapshot.forEach(item => {
+      const data = {
+        id: item.id,
+        ...item.data()
+      }
+      feeds.push(data)
+      console.log(data) 
+  
+    })
     return feeds
 }
 
