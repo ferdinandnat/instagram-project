@@ -12,6 +12,8 @@ function Feed() {
     useEffect(() => {
         const loadFeedDetail = async () => {
             // call firebase get feed detail with ID
+         const data = await getfeedDetail(id)
+         console.log(data)
         }
     }, [])
     return (
